@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfApplication1.layouts.Grid1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1.layouts"
+        mc:Ignorable="d"
+        Title="Grid1" Height="300" Width="300">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Width" Value="100" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Name="textBox" Width="100" Height="30" HorizontalAlignment="Left" />
+        <Button Grid.Row="1" Name="button" Content="Start" Height="30" />
+        <Label Grid.Row="2" Name="label" Content="Label" Width="100" Height="30" HorizontalAlignment="Left" />
+    </Grid>
+</Window>
