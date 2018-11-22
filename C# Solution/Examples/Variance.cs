@@ -9,6 +9,8 @@ namespace Examples
     {
         static void Main(string[] args)
         {
+            //                                     in - contravariant parameter can be less derived (Object)
+            //                                              out - covariant parameter can be more derived (VeblenGood)
             Func<Product, Product> func = new Func<Product, Product>(Target);
         }
 

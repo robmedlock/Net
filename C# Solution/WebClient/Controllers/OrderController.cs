@@ -23,8 +23,8 @@ namespace WebClient.Controllers
         public async Task<IActionResult> Index()
         {
             ICollection<Order> orders =
-                await ecommerceService.SelectOrdersByAccountIdAsync(User.Identity.Name);
-                //await ecommerceService.SelectOrdersByAccountIdAsync(context.HttpContext.User.Identity.Name);
+                //await ecommerceService.SelectOrdersByAccountIdAsync(User.Identity.Name);
+                await ecommerceService.SelectOrdersByAccountIdAsync(context.HttpContext.User.Identity.Name);
             return View(orders);
         }
 
