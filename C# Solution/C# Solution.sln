@@ -45,7 +45,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary.EntityFramewor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary.EntityFramework.IntegrationTest", "ClassLibrary.EntityFramework.IntegrationTest\ClassLibrary.EntityFramework.IntegrationTest.csproj", "{1485FA92-B06C-4A21-9A97-7309E48BC242}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient2", "WebClient2\WebClient2.csproj", "{9ED1834C-A179-4804-811B-F44C6C3BDC08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient2", "WebClient2\WebClient2.csproj", "{9ED1834C-A179-4804-811B-F44C6C3BDC08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
