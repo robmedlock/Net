@@ -9,9 +9,16 @@ namespace WebClient2.Pages
 {
     public class Page1Model : PageModel
     {
+        public string Message { get; private set; } = "PageModel in C#";
+
         public void OnGet()
         {
+            Message += $" Server time is { DateTime.Now }";
+        }
 
+        public void OnPost()
+        {
+            Message += $" Server time is { DateTime.Now }";
         }
     }
 }
