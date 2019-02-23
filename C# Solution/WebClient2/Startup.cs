@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ClassLibrary.EntityFramework;
 using ClassLibrary.ServiceInterfaces;
+using ClassLibrary.RepositoryInterfaces;
 
 namespace WebClient2
 {
@@ -57,6 +58,13 @@ namespace WebClient2
                 EcommerceContext context = ctx.GetService<EcommerceContext>();
                 return new EcommerceService(new ProductRepository(context),
                                             new OrderRepository(context));
+            });
+
+            //services registered with AddTransient are disposed after the request
+            services.AddTransient<IProductRepositoryAsync, ProductRepository>(ctx =>
+            {
+                EcommerceContext context = ctx.GetService<EcommerceContext>();
+                return new ProductRepository(context);
             });
 
             //password requirements

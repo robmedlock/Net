@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using ClassLibrary.ServiceInterfaces;
 
 namespace WebClient2.Areas.Identity.Pages.Account
 {
@@ -17,11 +18,15 @@ namespace WebClient2.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private IEcommerceService _ecommerceService;
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger)
+        public LoginModel(SignInManager<IdentityUser> signInManager,
+            ILogger<LoginModel> logger, 
+            IEcommerceService ecommerceService)
         {
             _signInManager = signInManager;
             _logger = logger;
+            _ecommerceService = ecommerceService;
         }
 
         [BindProperty]
@@ -77,6 +82,10 @@ namespace WebClient2.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+
+                    await _ecommerceService
+           .CreateOrSelectProvisionalOrderForExistingAccountAsync(Input.Email);
+
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)

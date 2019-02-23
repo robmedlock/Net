@@ -15,10 +15,5 @@ namespace WebClient2.Pages
         {
             Message += $" Server time is { DateTime.Now }";
         }
-
-        public void OnPost()
-        {
-            Message += $" Server time is { DateTime.Now }";
-        }
     }
 }
