@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Appliances.Entity;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
