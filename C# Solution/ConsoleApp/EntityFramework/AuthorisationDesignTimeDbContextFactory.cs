@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -6,7 +7,6 @@ using System.IO;
 using WebClient.Data;
 using System.Reflection;
 
-/*
 namespace ConsoleApp.EntityFramework
 {
     /// <summary>
