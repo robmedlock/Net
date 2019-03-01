@@ -7,7 +7,7 @@ namespace Examples
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine(Maths.ToRoman(6));
+            GroupExample.Main(null);
             Console.ReadKey();
         }
     }
