@@ -34,7 +34,8 @@ namespace Examples
                 new Patient{Name="Dawn", Method=Method.Rezume, ClinicVisits = new List<ClinicVisit>{new ClinicVisit { Qol=4}, new ClinicVisit { Qol=6} }}
             };
 
-            //query syntax
+            //query syntax. 
+            //IGrouping represents a collection of objects that have a common key
             IEnumerable<IGrouping<Method,Patient>> groupedPatients=
                 from patient in patients
                 group patient by patient.Method into newGroup
@@ -51,6 +52,8 @@ namespace Examples
                 Console.WriteLine($"Key: {methodGroup.Key}");
                 Console.WriteLine(methodGroup.Average(p=>p.ClinicVisits.Average(cv=>cv.Qol)));
             }
+
+            //patients.GroupBy(p => p.Method).OrderBy(ig => ig.Key.ToString()).ToList().ForEach(mg => Console.WriteLine($"{mg.Key} Average QOL {mg.Average(p => p.ClinicVisits.Average(cv => cv.Qol))}"));
         }
     }
 
