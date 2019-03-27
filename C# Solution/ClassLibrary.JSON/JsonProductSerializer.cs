@@ -8,11 +8,7 @@ namespace ClassLibrary.JSON
 {
     public class JsonProductSerializer : IProductSerializer
     {
-        private string path;
-        public JsonProductSerializer(string path)
-        {
-            this.path = path;
-        }
+        private string path = @"C:\Users\Owner\Documents\products.json";
 
         public void WriteProducts(ISet<Product> products)
         {

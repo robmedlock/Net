@@ -35,7 +35,7 @@ namespace ClassLibrary.Test
             Product product1 = new Product { Id = "1" };
             Product product2 = new Product { Id = "1" };
             products.Add(product1);
-            Assert.True(products.Contains(product2));
+            Assert.Contains(product2, products);
         }
 
         [Fact]
@@ -45,7 +45,7 @@ namespace ClassLibrary.Test
             Product product1 = new Product { Id = "1" };
             Product product2 = new Product { Id = "1" };
             products.Add(product1);
-            Assert.True(products.Contains(product2));
+            Assert.Contains(product2, products);
         }
 
         [Fact]

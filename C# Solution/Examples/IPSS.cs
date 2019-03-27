@@ -38,9 +38,9 @@ namespace Examples
             //IGrouping represents a collection of objects that have a common key
             IEnumerable<IGrouping<Method,Patient>> groupedPatients=
                 from patient in patients
-                group patient by patient.Method into newGroup
-                orderby newGroup.Key.ToString()
-                select newGroup;
+                group patient by patient.Method into patientGroup
+                orderby patientGroup.Key.ToString()
+                select patientGroup;
 
             //method syntax
             IEnumerable<IGrouping<Method, Patient>> groupedPatients2 =
