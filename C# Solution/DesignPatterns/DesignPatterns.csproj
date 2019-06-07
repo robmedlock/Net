@@ -83,8 +83,8 @@
     <Compile Include="Facade\Radio.cs" />
     <Compile Include="Observer\Class1.cs" />
     <Compile Include="Observer\IObserver.cs" />
-    <Compile Include="Observer\Observer.cs" />
     <Compile Include="Observer\Observable.cs" />
+    <Compile Include="Observer\Observer1.cs" />
     <Compile Include="Singleton\Class1.cs" />
     <Compile Include="Singleton\Factory.cs" />
     <Compile Include="Singleton\Singleton.cs" />

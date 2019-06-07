@@ -12,7 +12,9 @@ namespace DesignPatterns.Observer
         {
             IObserver observer = new Observer1();
             Observable observable = new Observable();
-            observable.RegisterObserver(observer.Notify);
+
+            EventHandler handler = new EventHandler(observer.Notify);
+            observable.RegisterObserver(handler);
 
             observable.NotifyObservers();
             Console.ReadKey();

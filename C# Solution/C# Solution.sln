@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{244A744A-41EC-44B5-ACF2-3D78F891C7E1}"
 EndProject
@@ -41,13 +41,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary.EntityFramewor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary.EntityFramework.IntegrationTest", "ClassLibrary.EntityFramework.IntegrationTest\ClassLibrary.EntityFramework.IntegrationTest.csproj", "{1485FA92-B06C-4A21-9A97-7309E48BC242}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient2", "WebClient2\WebClient2.csproj", "{9ED1834C-A179-4804-811B-F44C6C3BDC08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient", "WebClient2\WebClient.csproj", "{9ED1834C-A179-4804-811B-F44C6C3BDC08}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appliances", "Appliances\Appliances.csproj", "{8F18B966-FABA-4B1A-B738-84ADA8BBE8AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient2.Test", "WebClient2.Test\WebClient2.Test.csproj", "{2062C3FA-4D0D-4081-B38A-3BCB46C5E1F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient.Test", "WebClient2.Test\WebClient.Test.csproj", "{2062C3FA-4D0D-4081-B38A-3BCB46C5E1F0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Angular", "Angular\Angular.csproj", "{450212F8-5048-4E12-8BC0-86136F0A03A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinClient", "WinClient\WinClient.csproj", "{B2170634-067E-46C5-BF34-9F00B38B42DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinClient.Test", "WinClient.Test\WinClient.Test.csproj", "{E4299B13-B0BC-4734-BB26-0706F9A2C939}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -145,6 +149,14 @@ Global
 		{450212F8-5048-4E12-8BC0-86136F0A03A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{450212F8-5048-4E12-8BC0-86136F0A03A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{450212F8-5048-4E12-8BC0-86136F0A03A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2170634-067E-46C5-BF34-9F00B38B42DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2170634-067E-46C5-BF34-9F00B38B42DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2170634-067E-46C5-BF34-9F00B38B42DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2170634-067E-46C5-BF34-9F00B38B42DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4299B13-B0BC-4734-BB26-0706F9A2C939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4299B13-B0BC-4734-BB26-0706F9A2C939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4299B13-B0BC-4734-BB26-0706F9A2C939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4299B13-B0BC-4734-BB26-0706F9A2C939}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

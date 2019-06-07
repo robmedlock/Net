@@ -7,7 +7,7 @@ namespace Examples
     {
         public static void Main(string[] args)
         {
-            GroupExample.Main(null);
+            ConcurrentCollections.Main();
             Console.ReadKey();
         }
     }
