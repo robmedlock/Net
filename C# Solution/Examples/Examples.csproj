@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <StartupObject>Examples.Localization</StartupObject>
+    <StartupObject>Examples.RegularExpressions</StartupObject>
     <LangVersion>7.2</LangVersion>
   </PropertyGroup>
 
