@@ -10,7 +10,7 @@ namespace DesignPatterns.Observer
     {
         public static void Main(string[] args)
         {
-            IObserver observer = new Observer1();
+            IObserver observer = new Observer();
             Observable observable = new Observable();
 
             EventHandler handler = new EventHandler(observer.Notify);

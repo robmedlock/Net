@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Observer
 {
-    public class Observer1 : IObserver
+    public class Observer : IObserver
     {
         public void Notify(object sender, EventArgs e)
         {

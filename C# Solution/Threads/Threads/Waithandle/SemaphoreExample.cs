@@ -33,19 +33,19 @@ namespace Threads.Semaphores
             bool isCompleted = false;
             while (!isCompleted)
             {
-                //block current thread
-                if (semaphore.WaitOne(600))
+                //decrement semaphore count, block for 600ms if zero
+                if (semaphore.WaitOne(TimeSpan.FromSeconds(1.1)))
                 {
                     try
                     {
-                        Console.WriteLine($"Task {Task.CurrentId} locks the semaphore");
-                        Thread.Sleep(2000);
+                        Console.WriteLine($"Task {Task.CurrentId} locks the semaphore for 2 seconds");
+                        Thread.Sleep(TimeSpan.FromSeconds(2));
                     }
                     finally
                     {                        
-                        semaphore.Release();
-                        isCompleted = true;
+                        semaphore.Release(); //thread exits sempaphore
                         Console.WriteLine($"Task {Task.CurrentId} releases the semaphore");
+                        isCompleted = true;
                     }
                 }
                 else

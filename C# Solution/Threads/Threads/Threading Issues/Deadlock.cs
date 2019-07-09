@@ -75,12 +75,12 @@ namespace Threads
 
                 lock (fromAccount)
                 {
-                    Console.WriteLine($"{Thread.CurrentThread.Name} acquired lock on {fromAccount.ID}");
-                    //Console.WriteLine($"{Thread.CurrentThread.Name} suspended for 1 second");
-                    //Thread.Sleep(1000);
+                    Console.WriteLine($"{Thread.CurrentThread.Name} acquired lock on {fromAccount.ID}");                    
+                    Thread.Sleep(TimeSpan.FromSeconds(1));
                     Console.WriteLine($"{Thread.CurrentThread.Name} trying to acquire lock on {toAccount.ID}");
                     lock (toAccount)
                     {
+                        Console.WriteLine($"{Thread.CurrentThread.Name} acquired lock on {toAccount.ID}");
                         fromAccount.Withdraw(amountToTransfer);
                         toAccount.Deposit(amountToTransfer);
                     }

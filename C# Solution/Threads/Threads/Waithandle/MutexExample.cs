@@ -24,11 +24,7 @@ namespace Threads.Mutexes
                 tasks[i] = Task.Run(() => new Job(state).DoTheJob());
             }
 
-            //wait for tasks to complete
-            for (int i = 0; i < numTasks; i++)
-            {
-                tasks[i].Wait();
-            }
+            Task.WaitAll(tasks);
 
             Console.WriteLine("summarized {0}", state.State);
         }
@@ -52,7 +48,7 @@ namespace Threads.Mutexes
             {
                 bool createdNew;
                 Mutex mutex = new Mutex(false, "MyMutex", out createdNew);
-                Console.WriteLine($"DoTheJob {createdNew}");
+                Console.WriteLine($"DoTheJob {i} task {Task.CurrentId} new={createdNew}");
                 mutex.WaitOne();
                 try
                 {

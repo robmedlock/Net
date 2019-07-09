@@ -7,7 +7,7 @@ namespace Examples
     {
         public static void Main(string[] args)
         {
-            ConcurrentCollections.Main();
+
             Console.ReadKey();
         }
     }

@@ -1,4 +1,9 @@
-﻿using Threads.Threads;
+﻿using System.Linq;
+using Threads.ConcurrentCollections;
+using Threads.Mutexes;
+using Threads.Semaphores;
+using Threads.Threads;
+using Threads.Waithandle;
 
 namespace Threads
 {
@@ -6,7 +11,9 @@ namespace Threads
     {
         static void Main(string[] args)
         {
+            //QueueExample.StartQueue();
             //ManualResetEventSlimExample.Start();
+            //ManualResetEventCalculatorExample.Start();
             //AutoResetEventExample.Start();
             //ManualResetEventExample.Start();
             //Events4.Start();
@@ -26,13 +33,13 @@ namespace Threads
             //page 584
             //InterlockedExample.Start();
             //page 579
-            //Synchronization.Start();
+            //LockExample.Start();
             //page 577
             //new Deadlock().Start();
             //page 574
             //new Race().Start();
-
-            ThreadExamples.ThreadPoolExample();
+            //Primes.Start();
+            //ThreadExamples.ThreadPoolExample();
 
         }
 

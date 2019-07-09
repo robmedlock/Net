@@ -21,31 +21,43 @@ namespace Threads
             //t2.Join();
 
             Task t1 = Task.Run(() => PrintStar());
-            Task t2 = Task.Run(() => PrintPlus());
-            Console.ReadKey();
-            //Task t2 = t1.ContinueWith(antecedent => PrintPlus());
-            //Task.WaitAll(new Task[] { t1, t2 });
+
+            //Synchronization using Task.ContinueWith
+            //to start a task after another one completes its execution
+            Task t2 = t1.ContinueWith(antecedent => PrintPlus());
+            Task.WaitAll(new Task[] { t1, t2 });
         }
 
         void PrintStar()
         {
             //lock (this)
+            Monitor.Enter(this);
+            try 
             {
                 for (counter = 0; counter < 10; counter++)
                 {
                     Console.WriteLine("*");
                 }
             }
+            finally
+            {
+                Monitor.Exit(this);
+            }
         }
 
         private void PrintPlus()
         {
-            //lock (this)
+            Monitor.Enter(this);
+            try
             {
                 for (counter = 0; counter < 10; counter++)
                 {
                     Console.WriteLine("+");
                 }
+            }
+            finally
+            {
+                Monitor.Exit(this);
             }
         }
     }

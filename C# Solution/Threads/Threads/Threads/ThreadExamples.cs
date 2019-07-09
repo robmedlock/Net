@@ -43,7 +43,8 @@ namespace Threads.Threads
         public static void ThreadExample()
         {
             Console.WriteLine($"main thread {Thread.CurrentThread.ManagedThreadId}");
-            var t1 = new Thread(() => Console.WriteLine($"worker thread {Thread.CurrentThread.ManagedThreadId}"));
+            ThreadStart threadStart = () => Console.WriteLine($"worker thread {Thread.CurrentThread.ManagedThreadId}");
+            var t1 = new Thread(threadStart);
             t1.Start();
         }
 
@@ -53,13 +54,15 @@ namespace Threads.Threads
             //start 5 threads
             for (int i = 0; i < 5; i++)
             {
-                ThreadPool.QueueUserWorkItem(state => {
+                WaitCallback waitCallback = state =>
+                {
                     //each thread counts to 3
                     for (int j = 0; j < 3; j++)
                     {
                         Console.WriteLine($"loop {j} thread {Thread.CurrentThread.ManagedThreadId}");
                     }
-                });
+                };
+                ThreadPool.QueueUserWorkItem(waitCallback);
             }
             Thread.Sleep(500);
         }

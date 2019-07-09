@@ -19,11 +19,7 @@ namespace Threads
                 tasks[i] = Task.Run(() => new Job(state).DoTheJob());
             }
 
-            //wait for tasks to complete
-            for (int i = 0; i < numTasks; i++)
-            {
-                tasks[i].Wait();
-            }
+            Task.WaitAll(tasks);
 
             Console.WriteLine("summarized {0}", state.State);
         }

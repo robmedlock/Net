@@ -10,13 +10,18 @@ namespace Examples
     {
         public static void Main()
         {
-            //let the compiler determine the type
+            //nullable type
+            int? i = null;
+
+            //the compiler infers the type of the variable from 
+            //the expression on the right side of the initialization statement
             var v = GetSomeObject();
             //Console.WriteLine(v.Year);
 
-            //resolved at runtime 
+            //dynamic types resolved at runtime 
             dynamic d = GetSomeObject();
             Console.WriteLine(d.Year);
+
             Console.ReadKey();
         }
 
@@ -25,4 +30,5 @@ namespace Examples
             return DateTime.Now;
         }
     }
+
 }
