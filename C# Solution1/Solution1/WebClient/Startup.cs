@@ -12,6 +12,8 @@ using WebClient.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ClassLibrary.Repository.EF;
+using ClassLibrary.Service;
 
 namespace WebClient
 {
@@ -34,6 +36,24 @@ namespace WebClient
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            //additional configuration
+
+            //add additional DbContext if separate security database 
+            services.AddEntityFrameworkSqlServer().AddDbContext<EcommerceContext>(
+     options => options.UseSqlServer(
+                   Configuration.GetConnectionString("EcommerceConnection")));
+
+
+            //specify implementation of IEcommerceService 
+            //services registered with AddTransient are disposed after the request
+            services.AddTransient<IEcommerceService, EcommerceService>(ctx =>
+            {
+                EcommerceContext context = ctx.GetService<EcommerceContext>();
+                return new EcommerceService(new ProductRepository(context),
+                                            new OrderRepository(context));
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,7 +82,10 @@ namespace WebClient
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Simple}/{action=Index}/{id?}");
+                    pattern: "{controller=Product}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                   name: "areaRoute",
+                   pattern: "{area}/{controller}/{action}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

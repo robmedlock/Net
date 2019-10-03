@@ -28,4 +28,10 @@
     </Content>
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="Areas\Area1\Data\" />
+    <Folder Include="Areas\Area1\Models\" />
+  </ItemGroup>
+
 </Project>

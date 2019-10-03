@@ -11,17 +11,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary.EntityFramework.Test", "ClassLibrary.EntityFramework.Test\ClassLibrary.EntityFramework.Test.csproj", "{524B25EE-75D0-43DC-8371-B83448810355}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary.JSON.Test", "ClassLibrary.JSON.Test\ClassLibrary.JSON.Test.csproj", "{7FF143E6-678B-4DC6-8762-80C1A8D404D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary.JSON.Test", "ClassLibrary.JSON.Test\ClassLibrary.JSON.Test.csproj", "{7FF143E6-678B-4DC6-8762-80C1A8D404D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary.SQL.Test", "ClassLibrary.SQL.Test\ClassLibrary.SQL.Test.csproj", "{021A78DF-1F23-4FEC-A41E-C10F59700CBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary.SQL.Test", "ClassLibrary.SQL.Test\ClassLibrary.SQL.Test.csproj", "{021A78DF-1F23-4FEC-A41E-C10F59700CBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiClient", "WebApiClient\WebApiClient.csproj", "{B660CBFF-14B0-47E6-A556-0963AFFEA7D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiClient", "WebApiClient\WebApiClient.csproj", "{B660CBFF-14B0-47E6-A556-0963AFFEA7D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiClient.Test", "WebApiClient.Test\WebApiClient.Test.csproj", "{A36356BD-2408-4380-8045-DDC32CE81930}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiClient.Test", "WebApiClient.Test\WebApiClient.Test.csproj", "{A36356BD-2408-4380-8045-DDC32CE81930}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinClient", "WinClient\WinClient.csproj", "{62AA59E0-FCE2-4E1D-BE49-5C17E0DE89BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinClient", "WinClient\WinClient.csproj", "{62AA59E0-FCE2-4E1D-BE49-5C17E0DE89BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient", "WebClient\WebClient.csproj", "{4EFEBCD6-259B-41A7-A86F-F69CCA39D69F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient", "WebClient\WebClient.csproj", "{4EFEBCD6-259B-41A7-A86F-F69CCA39D69F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
