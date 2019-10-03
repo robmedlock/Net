@@ -10,7 +10,7 @@ namespace Examples
         static void Main(string[] args)
         {
             string pattern = "^[A-Za-z][A-Ha-hJ-Yj-y][0-9]\\s?[0-9][A-Za-z]{2}$";
-            string input = "HP7 2ARi";
+            string input = "HP7 2AR";
             Regex regex = new Regex(pattern);
             Console.WriteLine(regex.IsMatch(input));
             Match match = regex.Match(input);
