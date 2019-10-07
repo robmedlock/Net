@@ -6,6 +6,15 @@ using System.Linq;
 
 namespace WebApiClient
 {
+    public class Product
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public double CostPrice { get; set; }
+        public double RetailPrice { get; set; }
+        public byte[] RowVersion { get; set; }
+    }
+
     public class ProductRepository 
     {
         private string uri;
@@ -60,7 +69,7 @@ namespace WebApiClient
             {
                 //Send the product, encoded as JSON, in a POST request to the specified Uri 
                 HttpResponseMessage response = await client.PutAsJsonAsync(uri+product.Id, product);
-                return response.StatusCode == HttpStatusCode.OK;
+                return response.StatusCode == HttpStatusCode.NoContent;
             }
         }
 
@@ -69,7 +78,7 @@ namespace WebApiClient
             using (HttpClient client = new HttpClient())
             {
                 HttpResponseMessage response = await client.DeleteAsync(uri + id);
-                return response.StatusCode == HttpStatusCode.OK;
+                return response.StatusCode == HttpStatusCode.NoContent;
             }
         }
     }

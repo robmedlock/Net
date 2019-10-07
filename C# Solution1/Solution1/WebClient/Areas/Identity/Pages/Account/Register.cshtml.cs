@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using ClassLibrary.Entity;
+using ClassLibrary.Service;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -23,17 +25,20 @@ namespace WebClient.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private IEcommerceService _ecommerceService;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            IEcommerceService ecommerceService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _ecommerceService = ecommerceService;
         }
 
         [BindProperty]
@@ -78,7 +83,19 @@ namespace WebClient.Areas.Identity.Pages.Account
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+
+                    //setting Account property causes Account to be added to the 
+                    //database
+                    Order order = new Order
+                    {
+                        Account = new ClassLibrary.Entity.Account { Id = Input.Email },
+                        AccountId = Input.Email
+                    };
+                    int orderId = await _ecommerceService.CreateOrderAsync(order);
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+
                     _logger.LogInformation("User created a new account with password.");
+      
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));

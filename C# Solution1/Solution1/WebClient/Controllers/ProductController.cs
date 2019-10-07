@@ -39,7 +39,7 @@ namespace WebClient2.Controllers
         public async Task<IActionResult> Basket()
         {
             Order order = await
-                ecommerceService.CreateOrSelectProvisionalOrderForExistingAccountAsync(User.Identity.Name);
+                ecommerceService.CreateOrSelectProvisionalOrderForExistingAccountAsync(context.HttpContext.User.Identity.Name);
             return View(order.LineItems);
         }
 
@@ -47,7 +47,7 @@ namespace WebClient2.Controllers
         [Authorize]
         public async Task<IActionResult> Purchase()
         {
-            await ecommerceService.ConfirmOrderAsync(User.Identity.Name);
+            await ecommerceService.ConfirmOrderAsync(context.HttpContext.User.Identity.Name);
             return View();
         }
 
@@ -59,7 +59,7 @@ namespace WebClient2.Controllers
         // GET: Product/RemoveProductFromOrder/5
         public async Task<IActionResult> RemoveProductFromOrder(string id)
         {
-            await ecommerceService.RemoveProductFromOrderAsync(id, User.Identity.Name);
+            await ecommerceService.RemoveProductFromOrderAsync(id, context.HttpContext.User.Identity.Name);
             return RedirectToAction(nameof(Basket));
         }
 
@@ -106,7 +106,7 @@ namespace WebClient2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            //await ecommerceService.DeleteProductAsync(id);
+            await ecommerceService.DeleteProductAsync(id);
             return RedirectToAction(nameof(Index));
         }
 

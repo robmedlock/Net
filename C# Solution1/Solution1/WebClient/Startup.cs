@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ClassLibrary.Repository.EF;
 using ClassLibrary.Service;
+using ClassLibrary.Repository;
 
 namespace WebClient
 {
@@ -52,6 +53,13 @@ namespace WebClient
                 EcommerceContext context = ctx.GetService<EcommerceContext>();
                 return new EcommerceService(new ProductRepository(context),
                                             new OrderRepository(context));
+            });
+
+            //services registered with AddTransient are disposed after the request
+            services.AddTransient<IProductRepositoryAsync, ProductRepository>(ctx =>
+            {
+                EcommerceContext context = ctx.GetService<EcommerceContext>();
+                return new ProductRepository(context);
             });
 
         }

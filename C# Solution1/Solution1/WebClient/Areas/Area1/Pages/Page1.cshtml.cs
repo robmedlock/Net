@@ -10,7 +10,9 @@ namespace WebClient.Areas.Area1.Pages
     public class Page1Model : PageModel
     {
         public string Message { get; set; }
-        public void OnGet() => Message = "GET request";
-        public void OnPost() => Message = "POST request";
+        public void OnGet()
+        {
+            Message = $" Server time is { DateTime.Now }";
+        }
     }
 }
