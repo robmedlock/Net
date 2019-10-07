@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net;
 using System.Linq;
+using System;
 
 namespace WebApiClient
 {
@@ -15,10 +16,20 @@ namespace WebApiClient
         public byte[] RowVersion { get; set; }
     }
 
-    public class ProductRepository 
+    public interface IProductRepository
+    {
+        Task<bool> CreateAsync(Product product);
+        Task<bool> DeleteAsync(string id);
+        Task<ICollection<Product>> SelectAllAsync();
+        Task<Product> SelectByIdAsync(string id);
+        Task<ICollection<Product>> SelectByNameAsync(string name);
+        Task<bool> UpdateAsync(Product product);
+    }
+
+    public class ProductRepository : IProductRepository
     {
         private string uri;
-        public ProductRepository (string uri) => this.uri = uri;
+        public ProductRepository(string uri) => this.uri = uri;
 
         public async Task<bool> CreateAsync(Product product)
         {
@@ -68,7 +79,7 @@ namespace WebApiClient
             using (HttpClient client = new HttpClient())
             {
                 //Send the product, encoded as JSON, in a POST request to the specified Uri 
-                HttpResponseMessage response = await client.PutAsJsonAsync(uri+product.Id, product);
+                HttpResponseMessage response = await client.PutAsJsonAsync(uri + product.Id, product);
                 return response.StatusCode == HttpStatusCode.NoContent;
             }
         }

@@ -6,10 +6,18 @@
         xmlns:local="clr-namespace:WinClient"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <DockPanel>
-        
-        <TextBox x:Name="tb1" DockPanel.Dock="Top"/>
-        <Label/>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Background" Value="{DynamicResource GreenBackground}"/>
+        </Style>
+        <SolidColorBrush x:Key="GreenBackground" Color="Green"/>
+    </Window.Resources>
 
-    </DockPanel>
+    <Grid>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="25,23,0,0" Text="1000" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Background="{DynamicResource ResourceKey=GreenBackground}" x:Name="button" Content="Start" HorizontalAlignment="Left" Margin="25,58,0,0" VerticalAlignment="Top"  />
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="25,102,0,0" VerticalAlignment="Top"/>
+    </Grid>
 </Window>

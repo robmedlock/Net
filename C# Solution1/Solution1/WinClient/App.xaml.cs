@@ -18,14 +18,14 @@ namespace WinClient
         {
             base.OnStartup(e);
             //Microsoft.Extensions.DependencyInjection
-            ServiceCollection services = new ServiceCollection();
-            services.AddScoped<IInfo, Info>();
-            // add the MainWindow itself into the IoC chain
-            services.AddScoped<MainWindow>();
+            //ServiceCollection services = new ServiceCollection();
+            //services.AddScoped<IInfo, Info>();
+            //// add the MainWindow itself into the IoC chain
+            //services.AddScoped<MainWindow>();
 
-            IServiceProvider serviceProvider = services.BuildServiceProvider();
-            MainWindow mainWindow = serviceProvider.GetService<MainWindow>();
-            MainWindow.Show();
+            //IServiceProvider serviceProvider = services.BuildServiceProvider();
+            //MainWindow mainWindow = serviceProvider.GetService<MainWindow>();
+            //MainWindow.Show();
         }
 
 

@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinClient", "WinClient\WinC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient", "WebClient\WebClient.csproj", "{4EFEBCD6-259B-41A7-A86F-F69CCA39D69F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient.Test", "WebClient.Test\WebClient.Test.csproj", "{36839E63-7853-480F-92CC-1C166A9843E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient.Test", "WebClient.Test\WebClient.Test.csproj", "{36839E63-7853-480F-92CC-1C166A9843E9}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{41A98ED7-2F1E-48BC-80C6-3ADF558DAAB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinClientMVVM", "WinClientMVVM\WinClientMVVM.csproj", "{4980FAC2-4ACC-49DF-AB97-058358245FA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +85,10 @@ Global
 		{41A98ED7-2F1E-48BC-80C6-3ADF558DAAB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41A98ED7-2F1E-48BC-80C6-3ADF558DAAB6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{41A98ED7-2F1E-48BC-80C6-3ADF558DAAB6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4980FAC2-4ACC-49DF-AB97-058358245FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4980FAC2-4ACC-49DF-AB97-058358245FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4980FAC2-4ACC-49DF-AB97-058358245FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4980FAC2-4ACC-49DF-AB97-058358245FA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
