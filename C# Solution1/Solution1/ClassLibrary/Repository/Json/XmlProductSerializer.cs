@@ -12,7 +12,7 @@ namespace ClassLibrary.Repository.JSON
     public class XmlProductSerializer : IProductSerializer
     {
         private string path = @"C:\Users\Public\Documents\products.xml";
-        public void WriteProducts(ISet<Product> products)
+        public void WriteProducts(HashSet<Product> products)
         {
             var serializer = new DataContractSerializer(typeof(HashSet<Product>));
             using (FileStream fs = new FileStream(path, FileMode.Create))
@@ -22,7 +22,7 @@ namespace ClassLibrary.Repository.JSON
 
         }
 
-        public ISet<Product> ReadProducts()
+        public HashSet<Product> ReadProducts()
         {
             if (File.Exists(path))
             {

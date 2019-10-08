@@ -1,26 +1,23 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ClassLibrary.Entity;
-using System.IO;
-using System;
-using Microsoft.Extensions.Configuration;
 
 namespace ClassLibrary.Repository.EF
 {
     public class EcommerceContext : DbContext
     {
-        public EcommerceContext()
-        {
-
-        }
-
         public EcommerceContext(DbContextOptions<EcommerceContext>options) 
             : base(options)
         {
         }
 
+        public EcommerceContext()
+        {
+
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
+            if (!optionsBuilder.IsConfigured) //checks if options have already been set, via constructor
             {
                 optionsBuilder.UseSqlServer("Data Source=.\\sqlexpress;Initial Catalog=ecommerce;User ID=sa;Password=carpond");
             }

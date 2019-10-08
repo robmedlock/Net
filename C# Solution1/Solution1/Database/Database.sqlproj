@@ -68,4 +68,7 @@
     <None Include="Ecommerce\appsettings.json" />
     <None Include="Ecommerce\create order.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Ecommerce\create products and accounts.sql" />
+  </ItemGroup>
 </Project>

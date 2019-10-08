@@ -6,8 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Entity\" />
-    <Folder Include="Repository\Json\" />
-    <Folder Include="Repository\WebApiClient\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,8 +14,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 

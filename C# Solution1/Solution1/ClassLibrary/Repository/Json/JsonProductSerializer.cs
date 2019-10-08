@@ -10,17 +10,17 @@ namespace ClassLibrary.Repository.JSON
     {
         private string path = @"C:\Users\Public\Documents\products.json";
 
-        public void WriteProducts(ISet<Product> products)
+        public void WriteProducts(HashSet<Product> products)
         {
             string output = JsonConvert.SerializeObject(products);
             File.WriteAllText(path, output);
         }
 
-        public ISet<Product> ReadProducts()
+        public HashSet<Product> ReadProducts()
         {
             if (File.Exists(path))
             {
-                return JsonConvert.DeserializeObject<ISet<Product>>(File.ReadAllText(path));
+                return JsonConvert.DeserializeObject<HashSet<Product>>(File.ReadAllText(path));
             }
             return new HashSet<Product>();
         }

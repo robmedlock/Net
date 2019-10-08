@@ -12,10 +12,7 @@
 
         public override double RetailPrice
         {
-            get
-            {
-                return CostPrice * 4;
-            }
+            get=> CostPrice * 4;
         }
     }
 }

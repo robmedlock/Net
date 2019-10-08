@@ -14,6 +14,16 @@ namespace WebApiClient
         public double CostPrice { get; set; }
         public double RetailPrice { get; set; }
         public byte[] RowVersion { get; set; }
+        public Product()
+        {
+        }
+        public Product(string id, string name, double costPrice, double retailPrice)
+        {
+            Id = id;
+            Name = name;
+            CostPrice = costPrice;
+            RetailPrice = retailPrice;
+        }
     }
 
     public interface IProductRepository
