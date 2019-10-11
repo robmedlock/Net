@@ -25,9 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinClient.Test", "WinClient
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examples", "Examples\Examples.csproj", "{EC5B99FD-A0D7-49F5-B6F8-5193EA6D28E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interop", "Interop\Interop.csproj", "{C44D626B-1D05-4155-9599-8E336D328A43}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary.Test", "ClassLibrary.Test\ClassLibrary.Test.csproj", "{E404ADB1-7B38-4CE0-8739-D9FA05DB0413}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary.Test", "ClassLibrary.Test\ClassLibrary.Test.csproj", "{E404ADB1-7B38-4CE0-8739-D9FA05DB0413}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,10 +79,6 @@ Global
 		{EC5B99FD-A0D7-49F5-B6F8-5193EA6D28E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC5B99FD-A0D7-49F5-B6F8-5193EA6D28E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC5B99FD-A0D7-49F5-B6F8-5193EA6D28E3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C44D626B-1D05-4155-9599-8E336D328A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C44D626B-1D05-4155-9599-8E336D328A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C44D626B-1D05-4155-9599-8E336D328A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C44D626B-1D05-4155-9599-8E336D328A43}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E404ADB1-7B38-4CE0-8739-D9FA05DB0413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E404ADB1-7B38-4CE0-8739-D9FA05DB0413}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E404ADB1-7B38-4CE0-8739-D9FA05DB0413}.Release|Any CPU.ActiveCfg = Release|Any CPU
